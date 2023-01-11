@@ -1,9 +1,5 @@
-iTestCases:
-1.As a User, able to enter email in login page.
-2.As a User, able to enter username in login page.
-3.As a user, login in login page with valid credentials.
-
-
+iTestCase - 1:
+1.As a User, able to login with valid email and password in login page
 
 package org.example.slidopages;
 import org.openqa.selenium.WebDriver;
