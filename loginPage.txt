@@ -1,2 +1,4 @@
 iTestCases:
-1.Check login is Successful.
+1.As a User, able to enter email in login page.
+2.As a User, able to enter username in login page.
+3.As a user, login in login page with valid credentials.
