@@ -1,0 +1,39 @@
+Testcase - 2:
+As a user, create new event in EventPage.
+
+package org.example.slidopages;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class EventsPage extends BasicSetupPage {
+
+    @FindBy(id = "events-create-button")
+    protected WebElement newSlidoButton;
+
+    @FindBy(id = "createSlidoDateFrom")
+    protected WebElement startDateInput;
+
+    @FindBy(id = "createSlidoDateTo")
+    protected WebElement endDateInput;
+
+    @FindBy(id = "name")
+    protected WebElement slidoNameInput;
+
+    @FindBy(className = "create-slido-button")
+    protected WebElement createSlidoButton;
+
+    public EventsPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public boolean createNewSlidoInEventsTab(String startDate, String endDate, String slidoEventName) {
+        clickOnElement(newSlidoButton);
+        enterText(startDateInput, startDate);
+        enterText(endDateInput, endDate);
+        enterText(slidoNameInput, slidoEventName);
+        clickOnElement(createSlidoButton);
+        pauseScreen();
+        return driver.getCurrentUrl().contains("polls");
+    }
+}
